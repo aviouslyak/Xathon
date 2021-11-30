@@ -1,34 +1,35 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.10;
 
-contract WalkathonFactory {
+contract XathonFactory {
     struct KeyMapping {
-      mapping(string => Walkathon) map; 
+      mapping(string => Xathon) map; 
       string[] keys; 
     }
-    KeyMapping private deployedWalkathons; 
+
+    KeyMapping private deployedXathons; 
     mapping(string => bool) public takenNames; 
     
-    function deployWalkathon(address to, uint minimum, string memory name, string memory description) public {
+    function deployXathon(address to, uint minimum, string memory name, string memory description) public {
         require(!takenNames[name], "Name cannot be taken"); //
-        Walkathon newWalkathon = new Walkathon(to, minimum, name, description); 
+        Xathon newXathon = new Xathon(to, minimum, name, description); 
         takenNames[name] = true; 
         
-        deployedWalkathons.map[name] = newWalkathon; 
-        deployedWalkathons.keys.push(name); 
+        deployedXathons.map[name] = newXathon; 
+        deployedXathons.keys.push(name); 
     }
     
-    function getDeployedWalkathons() public view returns (string[] memory) {
-        return deployedWalkathons.keys; 
+    function getDeployedXathons() public view returns (string[] memory) {
+        return deployedXathons.keys; 
     }
 
-    function getAddress(string memory name) public view returns (Walkathon) {
+    function getAddress(string memory name) public view returns (Xathon) {
       require(takenNames[name], "Contract with name must exist"); 
-      return deployedWalkathons.map[name];
+      return deployedXathons.map[name];
     }
 }
 
-contract Walkathon {
+contract Xathon {
 
   struct Donation {
     uint maxValue;
@@ -42,8 +43,8 @@ contract Walkathon {
   }
 
   address public recipient;
-  string public walkathonName;
-  string public walkathonDescription; 
+  string public xathonName;
+  string public xathonDescription; 
   // the minimum amount of units a contributor must pay for
   uint public minimumUnitDeposit;
   uint public donationPerUnit; 
@@ -55,8 +56,8 @@ contract Walkathon {
   constructor(address to, uint minimum, string memory name, string memory description){
     minimumUnitDeposit = minimum;
     recipient = to;
-    walkathonName = name; 
-    walkathonDescription = description;
+    xathonName = name; 
+    xathonDescription = description;
     donationPerUnit = 0; 
   }
 
