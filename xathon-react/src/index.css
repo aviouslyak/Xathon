@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.responsive-component-width {
+  @apply lg:w-2/4 md:w-2/4 w-2/3;
+}
+
+.accent-gradient {
+  @apply dark:from-green-400 dark:to-blue-500 bg-gradient-to-r from-red-400 to-yellow-600;
+}
+
+.responsive-border-color {
+  @apply dark:border-gray-800 border-gray-300;
+}
+
+.accent-text {
+  @apply dark:text-blue-500 text-yellow-500;
+}
