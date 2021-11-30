@@ -10,9 +10,9 @@ contract XathonFactory {
     KeyMapping private deployedXathons; 
     mapping(string => bool) public takenNames; 
     
-    function deployXathon(address to, uint minimum, string memory name, string memory description) public {
-        require(!takenNames[name], "Name cannot be taken"); //
-        Xathon newXathon = new Xathon(to, minimum, name, description); 
+    function deployXathon(address to, uint minimum, string memory unit, string memory name, string memory description) public {
+        require(!takenNames[name], "Name cannot be taken");
+        Xathon newXathon = new Xathon(to, minimum, unit, name, description); 
         takenNames[name] = true; 
         
         deployedXathons.map[name] = newXathon; 
@@ -45,19 +45,22 @@ contract Xathon {
   address public recipient;
   string public xathonName;
   string public xathonDescription; 
+
   // the minimum amount of units a contributor must pay for
   uint public minimumUnitDeposit;
   uint public donationPerUnit; 
+  string public xathonUnit; 
   KeyMapping private donations;
                  
 
   event MoneyToClaim(address claimer, uint remaining);
   
-  constructor(address to, uint minimum, string memory name, string memory description){
+  constructor(address to, uint minimum, string memory unit, string memory name, string memory description){
     minimumUnitDeposit = minimum;
     recipient = to;
     xathonName = name; 
     xathonDescription = description;
+    xathonUnit = unit;
     donationPerUnit = 0; 
   }
 
