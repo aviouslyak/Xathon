@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import Input from "../../components/Input/Input";
 import SubmitButton from "../../components/SubmitButton/SubmitButton";
 import Textarea from "../../components/TextArea/Textarea";
 import WalkathonFactory from "../../services/contracts/xathonFactory";
+import { CgSpinner } from "react-icons/cg";
 
 interface FormValues {
   address: string;
@@ -14,6 +15,7 @@ interface FormValues {
 }
 
 const CreateXathon: React.FC = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const {
     register,
     handleSubmit,
@@ -26,13 +28,14 @@ const CreateXathon: React.FC = () => {
       minimumDeposit: 0,
     },
   });
+
   return (
     <form
       className="responsive-component-width p-4 flex flex-col justify-items-start items-start"
       onSubmit={handleSubmit(async (data) => {
-        console.log("SUBMITTING");
+        setIsSubmitting(true);
         const receipt = await WalkathonFactory.deployXathon(data);
-        console.log(`DONE SUBMITTING: receipt = \n${receipt}`);
+        setIsSubmitting(false);
       })}
     >
       <h3 className="font-semibold text-xl self-center">
@@ -88,7 +91,17 @@ const CreateXathon: React.FC = () => {
         placeholder="0"
         width="w-20"
       />
-      <SubmitButton value="Create" className="self-center" />
+      <SubmitButton className="self-center">
+        {isSubmitting ? (
+          <span>
+            <CgSpinner className="h-5 w-5 mr-1 inline animate-spin" />
+            Submitting
+          </span>
+        ) : (
+          "Create"
+        )}
+      </SubmitButton>
+      <button></button>
     </form>
   );
 };
