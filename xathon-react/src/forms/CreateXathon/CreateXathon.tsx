@@ -9,6 +9,7 @@ interface FormValues {
   address: string;
   name: string;
   description: string;
+  unit: string;
   minimumDeposit: number;
 }
 
@@ -69,6 +70,15 @@ const CreateWalkathonFactory: React.FC = () => {
         placeholder="Enter description"
         className="block w-2/3"
         {...register("description")}
+      />
+      <Input
+        type="text"
+        {...register("unit", {
+          maxLength: { value: 20, message: "*Must be less than 20 characters" },
+        })}
+        labelText="Enter unit for xathon"
+        placeholder="miles"
+        width="w-30"
       />
       <Input
         type="text"
