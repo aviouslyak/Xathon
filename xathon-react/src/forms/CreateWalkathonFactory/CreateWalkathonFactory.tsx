@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import Input from "../../components/Input/Input";
 import SubmitButton from "../../components/SubmitButton/SubmitButton";
 import Textarea from "../../components/TextArea/Textarea";
-import WalkathonFactory from "../../services/contracts/walkathonFactory";
+import WalkathonFactory from "../../services/contracts/xathonFactory";
 
 interface FormValues {
   address: string;
@@ -28,7 +28,7 @@ const CreateWalkathonFactory: React.FC = () => {
         }
 
         console.log("SUBMITTING");
-        const receipt = await WalkathonFactory.deployWalkathon(data);
+        const receipt = await WalkathonFactory.deployXathon(data);
         console.log(`DONE SUBMITTING: receipt = \n${receipt}`);
       })}
     >
