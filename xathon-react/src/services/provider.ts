@@ -1,5 +1,4 @@
 //@ts-ignore
-import ganache from "ganache-cli";
 declare let window: any;
 const getProvider = () => {
   return window.ethereum;
