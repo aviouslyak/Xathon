@@ -101,7 +101,9 @@ const CreateXathon: React.FC = () => {
           "Create"
         )}
       </SubmitButton>
-      <button></button>
+      <p className="text-sm self-center mt-1">
+        Your request could take a while to complete
+      </p>
     </form>
   );
 };
