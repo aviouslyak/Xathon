@@ -98,6 +98,7 @@ interface WalkathonValues {
   address: string;
   name: string;
   description: string;
+  unit: string;
   minimumDeposit: number;
 }
 
@@ -117,7 +118,7 @@ class WalkathonFactory {
       .deployXathon(
         values.address,
         values.minimumDeposit,
-        "miles",
+        values.unit,
         values.name,
         values.description
       )
