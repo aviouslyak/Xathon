@@ -54,6 +54,10 @@ const CreateWalkathonFactory: React.FC = () => {
         type="text"
         {...register("name", {
           required: "*Name is required",
+          maxLength: {
+            value: 50,
+            message: "*Must be less than 50 characters in length",
+          },
         })}
         errorText={errors.name && errors.name.message}
         labelText="Enter xathon name"
