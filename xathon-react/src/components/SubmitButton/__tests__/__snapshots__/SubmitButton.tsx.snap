@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SubmitButton /> matches snapshot 1`] = `
+<button
+  class="undefined accent-gradient rounded-full w-1/5 p-2 cursor-pointer"
+  type="submit"
+>
+  <p>
+    foo
+  </p>
+</button>
+`;
