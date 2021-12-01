@@ -16,18 +16,19 @@ const CreateWalkathonFactory: React.FC = () => {
   const {
     register,
     handleSubmit,
-    setValue,
     formState: { errors },
-  } = useForm<FormValues>();
+  } = useForm<FormValues>({
+    defaultValues: {
+      address: "",
+      name: "",
+      description: "",
+      minimumDeposit: 0,
+    },
+  });
   return (
     <form
       className="responsive-component-width p-4 flex flex-col justify-items-start items-start"
       onSubmit={handleSubmit(async (data) => {
-        if (!data.minimumDeposit) {
-          setValue("minimumDeposit", 0);
-          data.minimumDeposit = 0;
-        }
-
         console.log("SUBMITTING");
         const receipt = await WalkathonFactory.deployXathon(data);
         console.log(`DONE SUBMITTING: receipt = \n${receipt}`);
