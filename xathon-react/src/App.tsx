@@ -7,7 +7,7 @@ import { FaWalking } from "react-icons/fa";
 import SearchBar from "./components/SearchBar/SearchBar";
 import { SiEthereum } from "react-icons/si";
 import React, { useState } from "react";
-import CreateWalkathonFactory from "./forms/CreateWalkathonFactory/CreateWalkathonFactory";
+import CreateXathon from "./forms/CreateXathon/CreateXathon";
 import NoMetaMask from "./components/NoMetaMask/NoMetaMask";
 
 declare let window: any;
@@ -41,7 +41,7 @@ const App: React.FC = () => {
             </div>
 
             <SearchBar queryItems={queryItems} setQueryItems={setQueryItems} />
-            <CreateWalkathonFactory />
+            <CreateXathon />
           </div>
         ) : (
           <NoMetaMask />
