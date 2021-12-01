@@ -8,7 +8,7 @@ const MockSearchBar = () => {
   return <SearchBar queryItems={queryItems} setQueryItems={setQueryItems} />;
 };
 
-jest.mock("../../../services/contracts/walkathonFactory");
+jest.mock("../../../services/contracts/xathonFactory");
 describe("<SearchBar />", () => {
   let component: HTMLElement;
   beforeEach(async () => {
