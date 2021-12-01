@@ -13,7 +13,7 @@ exports[`<NoMetaMask /> matches snapshot 1`] = `
   <h5
     class="text-xl"
   >
-    Get it
+    Get it 
     <a
       class="text-blue-500 underline"
       href="https://metamask.io"
