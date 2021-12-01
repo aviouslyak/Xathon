@@ -19,7 +19,7 @@ const SearchBar: React.FC<Props> = ({ queryItems, setQueryItems }) => {
       xathons && setQueryItems(xathons);
     };
     getXathons();
-  }, [XathonFactory, setQueryItems]);
+  }, [setQueryItems]);
 
   useEffect(() => {
     if (query.startsWith("0x")) {
