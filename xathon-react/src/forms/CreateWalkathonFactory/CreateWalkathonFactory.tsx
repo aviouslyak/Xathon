@@ -25,6 +25,7 @@ const CreateWalkathonFactory: React.FC = () => {
       onSubmit={handleSubmit(async (data) => {
         if (!data.minimumDeposit) {
           setValue("minimumDeposit", 0);
+          data.minimumDeposit = 0;
         }
 
         console.log("SUBMITTING");
