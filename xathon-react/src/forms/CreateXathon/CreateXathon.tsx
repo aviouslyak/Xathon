@@ -13,7 +13,7 @@ interface FormValues {
   minimumDeposit: number;
 }
 
-const CreateWalkathonFactory: React.FC = () => {
+const CreateXathon: React.FC = () => {
   const {
     register,
     handleSubmit,
@@ -93,4 +93,4 @@ const CreateWalkathonFactory: React.FC = () => {
   );
 };
 
-export default CreateWalkathonFactory;
+export default CreateXathon;
