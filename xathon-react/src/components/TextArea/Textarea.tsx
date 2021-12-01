@@ -1,16 +1,6 @@
 import React, { TextareaHTMLAttributes } from "react";
 import { UseFormRegister, FieldValues } from "react-hook-form";
 
-interface TextareaProps {
-  handleOnBlur?: () => void;
-  value: string;
-  setValue: React.Dispatch<React.SetStateAction<string>>;
-  placeholder?: string;
-  label?: string;
-  width?: string;
-  errorText?: string;
-}
-
 interface TextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   className?: string;
   name: string;
