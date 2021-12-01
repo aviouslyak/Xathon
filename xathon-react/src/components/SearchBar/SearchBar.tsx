@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import Input from "../Input/Input";
-import wf from "../../services/contracts/walkathonFactory";
 import Dropdown from "../Dropdown/Dropdown";
-import WalkathonFactory from "../../services/contracts/walkathonFactory";
+import XathonFactory from "../../services/contracts/xathonFactory";
 
 interface Props {
   queryItems: string[];
@@ -15,12 +14,12 @@ const SearchBar: React.FC<Props> = ({ queryItems, setQueryItems }) => {
   const [returnedItems, setReturnedItems] = React.useState<string[]>([]);
 
   useEffect(() => {
-    const getWalkathons = async () => {
-      const walkathons = await WalkathonFactory.getDeployedWalkathons();
-      walkathons && setQueryItems(walkathons);
+    const getXathons = async () => {
+      const xathons = await XathonFactory.getDeployedXathons();
+      xathons && setQueryItems(xathons);
     };
-    getWalkathons();
-  }, [WalkathonFactory, setQueryItems]);
+    getXathons();
+  }, [XathonFactory, setQueryItems]);
 
   useEffect(() => {
     if (query.startsWith("0x")) {
