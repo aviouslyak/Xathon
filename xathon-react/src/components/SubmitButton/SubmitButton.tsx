@@ -7,6 +7,7 @@ const SubmitButton: React.FC<Props> = ({ className, ...props }) => {
   return (
     <button
       className={`${className} accent-gradient rounded-full w-1/5 p-2 cursor-pointer`}
+      type="submit"
       {...props}
     >
       {props.children}

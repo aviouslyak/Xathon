@@ -10,7 +10,7 @@ interface TextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
 }
 
 type MakeOptional<Type> = {
-  [Property in keyof Type]?: boolean;
+  [Property in keyof Type]: boolean;
 };
 
 const Textarea = React.forwardRef<
@@ -37,8 +37,10 @@ const Textarea = React.forwardRef<
           className={`
            dark:bg-gray-700 rounded-lg block pl-2 pr-10 bg-gray-200 ${className}`}
           {...props}
+          name={name}
           ref={ref}
-        ></textarea>
+          id={name}
+        />
         <p className="text-xs text-red-500">{errorText}</p>
       </>
     );

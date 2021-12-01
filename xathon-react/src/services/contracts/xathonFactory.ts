@@ -94,7 +94,7 @@ const abi: AbiItem[] = [
   },
 ];
 
-interface WalkathonValues {
+interface XathonValues {
   address: string;
   name: string;
   description: string;
@@ -112,8 +112,9 @@ class WalkathonFactory {
     return await this.wFactory.methods.getDeployedXathons().call();
   }
 
-  static async deployXathon(values: WalkathonValues) {
+  static async deployXathon(values: XathonValues) {
     const addresses = await web3.eth.requestAccounts();
+    console.log(`Description = ${values.description}`);
     return await this.wFactory.methods
       .deployXathon(
         values.address,

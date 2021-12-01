@@ -3,6 +3,7 @@
 exports[`<Input /> matches snapshot 1`] = `
 <input
   class="rounded-lg dark:bg-gray-700 h-full w-full pl-2 pr-10 bg-gray-200 foo"
+  id="label"
   name="label"
   placeholder="Search"
 />

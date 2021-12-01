@@ -54,8 +54,9 @@ const Input = React.forwardRef<
                 : "rounded-lg"
             } dark:bg-gray-700 h-full w-full pl-2 ${
               icon ? "pr-10" : "pr-2"
-            } bg-gray-200 ${className}`}
+            } bg-gray-200 ${className ? className : ""}`}
             ref={ref}
+            id={name}
             {...props}
           />
         </div>

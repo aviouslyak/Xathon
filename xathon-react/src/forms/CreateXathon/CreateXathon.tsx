@@ -24,6 +24,7 @@ const CreateXathon: React.FC = () => {
     defaultValues: {
       address: "",
       name: "",
+      unit: "",
       description: "",
       minimumDeposit: 0,
     },
@@ -37,6 +38,8 @@ const CreateXathon: React.FC = () => {
         const receipt = await WalkathonFactory.deployXathon(data);
         setIsSubmitting(false);
       })}
+      data-testid="form"
+      id="create-xathon"
     >
       <h3 className="font-semibold text-xl self-center">
         Create new <span className="accent-text">Xathon</span> contract
@@ -51,7 +54,7 @@ const CreateXathon: React.FC = () => {
           },
         })}
         errorText={errors.address && errors.address.message}
-        labelText="Enter donation recipient address"
+        labelText="Donation recipient address"
         placeholder="Enter address"
         width="w-2/3"
       />
@@ -65,7 +68,7 @@ const CreateXathon: React.FC = () => {
           },
         })}
         errorText={errors.name && errors.name.message}
-        labelText="Enter xathon name"
+        labelText="Xathon name"
         placeholder="Enter name"
         width="w-2/3"
       />
@@ -77,9 +80,13 @@ const CreateXathon: React.FC = () => {
       <Input
         type="text"
         {...register("unit", {
-          maxLength: { value: 20, message: "*Must be less than 20 characters" },
+          maxLength: {
+            value: 20,
+            message: "*Must be less than 20 characters in length",
+          },
         })}
-        labelText="Enter unit for xathon"
+        labelText="Unit for xathon"
+        errorText={errors.unit && errors.unit.message}
         placeholder="miles"
         width="w-30"
       />
@@ -87,11 +94,11 @@ const CreateXathon: React.FC = () => {
         type="text"
         {...register("minimumDeposit", { valueAsNumber: true })}
         errorText={errors.minimumDeposit && errors.minimumDeposit.message}
-        labelText="Enter minimum deposit"
+        labelText="Minimum deposit"
         placeholder="0"
         width="w-20"
       />
-      <SubmitButton className="self-center">
+      <SubmitButton form="create-xathon" className="self-center">
         {isSubmitting ? (
           <span>
             <CgSpinner className="h-5 w-5 mr-1 inline animate-spin" />
