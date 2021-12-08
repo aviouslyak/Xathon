@@ -102,7 +102,7 @@ interface XathonValues {
   minimumDeposit: number;
 }
 
-class WalkathonFactory {
+class XathonFactory {
   private static wFactory = new web3.eth.Contract(
     abi,
     addresses["rinkeby"]
@@ -114,7 +114,6 @@ class WalkathonFactory {
 
   static async deployXathon(values: XathonValues) {
     const addresses = await web3.eth.requestAccounts();
-    console.log(`Description = ${values.description}`);
     return await this.wFactory.methods
       .deployXathon(
         values.address,
@@ -126,4 +125,4 @@ class WalkathonFactory {
       .send({ from: addresses[0] });
   }
 }
-export default WalkathonFactory;
+export default XathonFactory;
