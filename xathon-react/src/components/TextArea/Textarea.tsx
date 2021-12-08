@@ -37,7 +37,7 @@ const Textarea = React.forwardRef<
         <ErrorText className="text-xs">{errorText}</ErrorText>
         <textarea
           className={`
-          resize-none dark:bg-gray-700 rounded-lg block pl-2 pr-10 bg-gray-200 ${className}`}
+          resize-none dark:bg-gray-700 rounded-lg block px-2 bg-gray-200 ${className}`}
           {...props}
           name={name}
           ref={ref}
