@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import Input from "../../components/Input/Input";
 import SubmitButton from "../../components/SubmitButton/SubmitButton";
 import Textarea from "../../components/TextArea/Textarea";
-import WalkathonFactory from "../../services/contracts/xathonFactory";
+import XathonFactory from "../../services/contracts/xathonFactory";
 import { CgSpinner } from "react-icons/cg";
 
 interface FormValues {
@@ -35,7 +35,7 @@ const CreateXathon: React.FC = () => {
       className="responsive-component-width p-4 flex flex-col justify-items-start items-start"
       onSubmit={handleSubmit(async (data) => {
         setIsSubmitting(true);
-        const receipt = await WalkathonFactory.deployXathon(data);
+        const receipt = await XathonFactory.deployXathon(data);
         setIsSubmitting(false);
       })}
       data-testid="form"
