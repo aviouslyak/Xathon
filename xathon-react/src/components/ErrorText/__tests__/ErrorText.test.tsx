@@ -4,7 +4,7 @@ import ErrorText from "../ErrorText";
 describe("<ErrorText />", () => {
   let component: HTMLElement;
   beforeEach(() => {
-    render(<ErrorText text="foo" className="class" />);
+    render(<ErrorText className="class">foo</ErrorText>);
     component = screen.getByText("foo");
   });
 
@@ -22,7 +22,7 @@ describe("<ErrorText />", () => {
 
   test("does not have className undefined by default", () => {
     cleanup();
-    render(<ErrorText text="foo" />);
+    render(<ErrorText className="class">foo</ErrorText>);
     component = screen.getByText("foo");
     expect(component).not.toHaveClass("undefined");
   });
