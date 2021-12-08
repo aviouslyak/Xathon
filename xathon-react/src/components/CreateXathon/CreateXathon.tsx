@@ -16,6 +16,8 @@ interface FormValues {
 
 const CreateXathon: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
+
   const {
     register,
     handleSubmit,
@@ -35,7 +37,13 @@ const CreateXathon: React.FC = () => {
       className="responsive-component-width p-4 flex flex-col justify-items-start items-start"
       onSubmit={handleSubmit(async (data) => {
         setIsSubmitting(true);
-        const receipt = await XathonFactory.deployXathon(data);
+        try {
+          const receipt = await XathonFactory.deployXathon(data);
+        } catch (err) {
+          setError(
+            "Some error has occurred. Check if MetaMask is enabled, and that the contract name is unique"
+          );
+        }
         setIsSubmitting(false);
       })}
       data-testid="form"
@@ -44,6 +52,7 @@ const CreateXathon: React.FC = () => {
       <h3 className="font-semibold text-xl self-center">
         Create new <span className="accent-text">Xathon</span> contract
       </h3>
+      <p className="text-md text-red-500">{error}</p>
       <Input
         type="text"
         {...register("address", {
