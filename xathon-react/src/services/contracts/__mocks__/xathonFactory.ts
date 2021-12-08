@@ -1,3 +1,4 @@
+import { TransactionReceipt } from "web3-core";
 interface XathonValues {
   address: string;
   name: string;
@@ -14,8 +15,10 @@ class XathonFactory {
   }
 
   public static deployXathon = jest.fn(
-    (values: XathonValues): Promise<unknown> => {
-      return new Promise(() => {});
+    async (values: XathonValues): Promise<TransactionReceipt> => {
+      return await new Promise((resolve) =>
+        resolve("foo" as any as TransactionReceipt)
+      );
     }
   );
 }
