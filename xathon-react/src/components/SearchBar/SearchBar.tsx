@@ -61,7 +61,9 @@ const SearchBar: React.FC<Props> = ({ queryItems, setQueryItems }) => {
         value={query}
         dropdownActive={dropdownActive}
         onBlur={handleOnBlur}
-        icon={<AiOutlineSearch className="block m-auto hover:text-gray-500" />}
+        icon={
+          <AiOutlineSearch className="block m-auto transition-transform hover:text-gray-500 transform hover:scale-110" />
+        }
         width="responsive-component-width"
       />
       {dropdownActive && (
