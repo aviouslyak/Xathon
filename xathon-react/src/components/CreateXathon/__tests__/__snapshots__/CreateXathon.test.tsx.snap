@@ -73,7 +73,7 @@ exports[`foo matches snapshot 1`] = `
   />
   <textarea
     class="
-           dark:bg-gray-700 rounded-lg block pl-2 pr-10 bg-gray-200 block w-2/3"
+          resize-none dark:bg-gray-700 rounded-lg block pl-2 pr-10 bg-gray-200 block w-2/3"
     id="description"
     name="description"
     placeholder="Enter description"
