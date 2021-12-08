@@ -1,6 +1,7 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import CreateXathon from "../CreateXathon";
 import XathonFactory from "../../../services/contracts/xathonFactory";
+import { TransactionReceipt } from "web3-core";
 
 jest.mock("../../../services/contracts/xathonFactory");
 const ADDRESS = "0x0000000000000000000000000000000000000000";
@@ -218,7 +219,26 @@ describe("foo", () => {
     expect(defaults.length).toBe(4);
   });
 
-  test("Changes button text when submitting", async () => {
+  test("Changes button text after submitting", async () => {
+    fireEvent.change(addressInput, { target: { value: ADDRESS } });
+    fireEvent.change(nameInput, { target: { value: "foo" } });
+    fireEvent.change(descriptionInput, { target: { value: "foo" } });
+    fireEvent.change(unitInput, { target: { value: "miles" } });
+    fireEvent.change(minimumDepositInput, { target: { value: 0 } });
+    fireEvent.click(submit);
+
+    await waitFor(() => {
+      const buttonRefound = screen.getByText(/create/i);
+      expect(buttonRefound).toBeInTheDocument();
+    });
+  });
+
+  test("Sets loading text when loading", async () => {
+    const mockFn = jest.spyOn(XathonFactory, "deployXathon");
+    mockFn.mockImplementation(async () => {
+      return await new Promise(() => {});
+    });
+
     fireEvent.change(addressInput, { target: { value: ADDRESS } });
     fireEvent.change(nameInput, { target: { value: "foo" } });
     fireEvent.change(descriptionInput, { target: { value: "foo" } });
