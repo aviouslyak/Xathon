@@ -39,7 +39,7 @@ const CreateXathon: React.FC = () => {
       onSubmit={handleSubmit(async (data) => {
         setIsSubmitting(true);
         try {
-          const receipt = await XathonFactory.deployXathon(data);
+          await XathonFactory.deployXathon(data);
         } catch (err) {
           setError(
             "Some error has occurred. Check that you confirmed the transaction in MetaMask, and that the contract name is unique"
