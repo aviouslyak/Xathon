@@ -1,5 +1,6 @@
 import React, { TextareaHTMLAttributes } from "react";
 import { UseFormRegister, FieldValues } from "react-hook-form";
+import ErrorText from "../ErrorText/ErrorText";
 
 interface TextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   className?: string;
@@ -33,6 +34,7 @@ const Textarea = React.forwardRef<
           </label>
         )}
 
+        <ErrorText className="text-xs">{errorText}</ErrorText>
         <textarea
           className={`
            dark:bg-gray-700 rounded-lg block pl-2 pr-10 bg-gray-200 ${className}`}
@@ -41,7 +43,6 @@ const Textarea = React.forwardRef<
           ref={ref}
           id={name}
         />
-        <p className="text-xs text-red-500">{errorText}</p>
       </>
     );
   }

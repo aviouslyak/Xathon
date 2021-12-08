@@ -1,5 +1,6 @@
 import React, { InputHTMLAttributes } from "react";
 import { UseFormRegister, FieldValues } from "react-hook-form";
+import ErrorText from "../ErrorText/ErrorText";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   dropdownActive?: boolean;
@@ -43,7 +44,7 @@ const Input = React.forwardRef<
             {labelText || capitalizeFirstLetter(name)}
           </label>
         )}
-        <p className="text-xs text-red-500">{errorText}</p>
+        <ErrorText className="text-xs">{errorText}</ErrorText>
         <div data-testid="input-wrapper" className={`${width} h-10 relative`}>
           {icon && <Icon icon={icon} />}
           <input
