@@ -1,6 +1,6 @@
 import web3 from "../web3";
 import { AbiItem } from "web3-utils";
-import { XathonFactory } from "../../types/web3-v1-contracts/XathonFactory";
+import { XathonFactoryType } from "../../types/web3-v1-contracts/XathonFactory";
 
 const addresses = {
   localhost: "0x80dbA3D7D54ea6dA24737eCa742d7a2F29Df8AE8",
@@ -106,7 +106,7 @@ class XathonFactory {
   private static wFactory = new web3.eth.Contract(
     abi,
     addresses["rinkeby"]
-  ) as any as XathonFactory;
+  ) as any as XathonFactoryType;
 
   static async getDeployedXathons() {
     return await this.wFactory.methods.getDeployedXathons().call();
