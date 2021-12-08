@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import Input from "../../components/Input/Input";
-import SubmitButton from "../../components/SubmitButton/SubmitButton";
-import Textarea from "../../components/TextArea/Textarea";
+import Input from "../Input/Input";
+import SubmitButton from "../SubmitButton/SubmitButton";
+import Textarea from "../TextArea/Textarea";
 import XathonFactory from "../../services/contracts/xathonFactory";
 import { CgSpinner } from "react-icons/cg";
 
