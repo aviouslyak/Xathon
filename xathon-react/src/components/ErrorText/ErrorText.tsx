@@ -1,10 +1,14 @@
 import React, { HTMLAttributes } from "react";
 
-interface ErrorTextProps extends HTMLAttributes<HTMLElement> {
-  text: string;
-}
-const ErrorText: React.FC<ErrorTextProps> = ({ text, className, ...props }) => {
-  return <p className={`text-red-500 ${className ? className : ""}`}>{text}</p>;
+const ErrorText: React.FC<HTMLAttributes<HTMLElement>> = ({
+  className,
+  ...props
+}) => {
+  return (
+    <p {...props} className={`text-red-500 ${className ? className : ""}`}>
+      {props.children}
+    </p>
+  );
 };
 
 export default ErrorText;
