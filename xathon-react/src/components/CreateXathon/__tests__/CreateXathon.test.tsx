@@ -251,4 +251,34 @@ describe("foo", () => {
       expect(buttonRefound).toBeInTheDocument();
     });
   });
+
+  test("Error is shown", async () => {
+    const mockFn = jest.spyOn(XathonFactory, "deployXathon");
+    mockFn.mockImplementation(async () => {
+      return await new Promise((resolve, reject) => {
+        reject();
+      });
+    });
+
+    fireEvent.change(addressInput, { target: { value: ADDRESS } });
+    fireEvent.change(nameInput, { target: { value: "foo" } });
+    fireEvent.change(descriptionInput, { target: { value: "foo" } });
+    fireEvent.change(unitInput, { target: { value: "miles" } });
+    fireEvent.change(minimumDepositInput, { target: { value: 0 } });
+    fireEvent.click(submit);
+
+    await waitFor(() => {
+      const errorText = screen.getByText(
+        "Some error has occurred. Check if MetaMask is enabled, and that the contract name is unique"
+      );
+      expect(errorText).toBeInTheDocument();
+    });
+  });
+
+  test("Error is not shown by default", () => {
+    const errorText = screen.queryByText(
+      "Some error has occurred. Check if MetaMask is enabled, and that the contract name is unique"
+    );
+    expect(errorText).not.toBeInTheDocument();
+  });
 });

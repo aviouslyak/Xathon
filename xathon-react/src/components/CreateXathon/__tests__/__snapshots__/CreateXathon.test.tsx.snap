@@ -17,6 +17,9 @@ exports[`foo matches snapshot 1`] = `
     </span>
      contract
   </h3>
+  <p
+    class="text-md text-red-500"
+  />
   <label
     class="font-semibold"
     for="address"
