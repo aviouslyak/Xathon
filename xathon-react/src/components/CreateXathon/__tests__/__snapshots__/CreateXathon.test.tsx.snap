@@ -27,7 +27,7 @@ exports[`foo matches snapshot 1`] = `
     Donation recipient address
   </label>
   <p
-    class="text-xs text-red-500"
+    class="text-red-500 text-xs"
   />
   <div
     class="w-2/3 h-10 relative"
@@ -48,7 +48,7 @@ exports[`foo matches snapshot 1`] = `
     Xathon name
   </label>
   <p
-    class="text-xs text-red-500"
+    class="text-red-500 text-xs"
   />
   <div
     class="w-2/3 h-10 relative"
@@ -68,15 +68,15 @@ exports[`foo matches snapshot 1`] = `
   >
     Description
   </label>
+  <p
+    class="text-red-500 text-xs"
+  />
   <textarea
     class="
            dark:bg-gray-700 rounded-lg block pl-2 pr-10 bg-gray-200 block w-2/3"
     id="description"
     name="description"
     placeholder="Enter description"
-  />
-  <p
-    class="text-xs text-red-500"
   />
   <label
     class="font-semibold"
@@ -85,7 +85,7 @@ exports[`foo matches snapshot 1`] = `
     Unit for xathon
   </label>
   <p
-    class="text-xs text-red-500"
+    class="text-red-500 text-xs"
   />
   <div
     class="w-30 h-10 relative"
@@ -106,7 +106,7 @@ exports[`foo matches snapshot 1`] = `
     Minimum deposit
   </label>
   <p
-    class="text-xs text-red-500"
+    class="text-red-500 text-xs"
   />
   <div
     class="w-20 h-10 relative"
