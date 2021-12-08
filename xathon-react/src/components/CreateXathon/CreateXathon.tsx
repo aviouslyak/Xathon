@@ -42,7 +42,7 @@ const CreateXathon: React.FC = () => {
           const receipt = await XathonFactory.deployXathon(data);
         } catch (err) {
           setError(
-            "Some error has occurred. Check if MetaMask is enabled, and that the contract name is unique"
+            "Some error has occurred. Check that you confirmed the transaction in MetaMask, and that the contract name is unique"
           );
         }
         setIsSubmitting(false);

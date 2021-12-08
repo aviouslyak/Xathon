@@ -269,7 +269,7 @@ describe("foo", () => {
 
     await waitFor(() => {
       const errorText = screen.getByText(
-        "Some error has occurred. Check if MetaMask is enabled, and that the contract name is unique"
+        "Some error has occurred. Check that you confirmed the transaction in MetaMask, and that the contract name is unique"
       );
       expect(errorText).toBeInTheDocument();
     });
@@ -277,7 +277,7 @@ describe("foo", () => {
 
   test("Error is not shown by default", () => {
     const errorText = screen.queryByText(
-      "Some error has occurred. Check if MetaMask is enabled, and that the contract name is unique"
+      "Some error has occurred. Check that you confirmed the transaction in MetaMask, and that the contract name is unique"
     );
     expect(errorText).not.toBeInTheDocument();
   });
