@@ -1,6 +1,6 @@
 import web3 from "../web3";
 import { AbiItem } from "web3-utils";
-import { XathonFactoryType } from "../../types/web3-v1-contracts/XathonFactory";
+import { XathonFactory as XathonFactoryType } from "../../types/web3-v1-contracts/XathonFactory";
 
 const addresses = {
   localhost: "0x80dbA3D7D54ea6dA24737eCa742d7a2F29Df8AE8",
@@ -114,6 +114,7 @@ class XathonFactory {
 
   static async deployXathon(values: XathonValues) {
     const addresses = await web3.eth.requestAccounts();
+    this.wFactory.handleRevert = true;
     return await this.wFactory.methods
       .deployXathon(
         values.address,
