@@ -51,7 +51,7 @@ const CreateXathon: React.FC = () => {
       id="create-xathon"
     >
       <h3 className="font-semibold text-xl self-center">
-        Create new <span className="accent-text">Xathon</span> contract
+        Create a new <span className="accent-text">Xathon</span> contract
       </h3>
       <ErrorText className="text-md">{error}</ErrorText>
       <Input
