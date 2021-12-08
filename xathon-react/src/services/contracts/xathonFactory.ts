@@ -114,7 +114,6 @@ class XathonFactory {
 
   static async deployXathon(values: XathonValues) {
     const addresses = await web3.eth.requestAccounts();
-    this.wFactory.handleRevert = true;
     return await this.wFactory.methods
       .deployXathon(
         values.address,
