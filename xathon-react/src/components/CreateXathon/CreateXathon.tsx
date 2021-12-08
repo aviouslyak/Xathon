@@ -5,6 +5,7 @@ import SubmitButton from "../SubmitButton/SubmitButton";
 import Textarea from "../TextArea/Textarea";
 import XathonFactory from "../../services/contracts/xathonFactory";
 import { CgSpinner } from "react-icons/cg";
+import ErrorText from "../ErrorText/ErrorText";
 
 interface FormValues {
   address: string;
@@ -52,7 +53,7 @@ const CreateXathon: React.FC = () => {
       <h3 className="font-semibold text-xl self-center">
         Create new <span className="accent-text">Xathon</span> contract
       </h3>
-      <p className="text-md text-red-500">{error}</p>
+      <ErrorText className="text-md">{error}</ErrorText>
       <Input
         type="text"
         {...register("address", {
