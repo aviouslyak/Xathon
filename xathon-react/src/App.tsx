@@ -46,7 +46,7 @@ const App: React.FC = () => {
               setQueryItems={setQueryItems}
               setContractAddress={setContractAddress}
             />
-            <CreateXathon />
+            {contractAddress ? null : <CreateXathon />}
           </div>
         ) : (
           <NoMetaMask />
