@@ -124,5 +124,9 @@ class XathonFactory {
       )
       .send({ from: addresses[0] });
   }
+
+  static async getAddress(name: string) {
+    return await this.wFactory.methods.getAddress(name).call();
+  }
 }
 export default XathonFactory;
