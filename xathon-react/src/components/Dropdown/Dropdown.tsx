@@ -8,7 +8,7 @@ const Dropdown: React.FC<Props> = ({ returnedItems, setQuery }) => {
   return (
     <div
       data-testid="dropdown-container"
-      className="mt-0 responsive-component-width flex flex-col items-start"
+      className="mt-0 flex flex-col items-start"
     >
       {returnedItems.slice(0, 5).map((item, i) => {
         return (

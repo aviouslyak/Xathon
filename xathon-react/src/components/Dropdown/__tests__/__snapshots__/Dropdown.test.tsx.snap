@@ -2,7 +2,7 @@
 
 exports[`<Dropdown /> matches snapshot 1`] = `
 <div
-  class="mt-0 responsive-component-width flex flex-col items-start"
+  class="mt-0 flex flex-col items-start"
   data-testid="dropdown-container"
 >
   <button
