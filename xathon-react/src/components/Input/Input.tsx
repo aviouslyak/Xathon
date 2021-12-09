@@ -72,9 +72,9 @@ interface IconProps {
 
 const Icon: React.FC<IconProps> = ({ icon }) => {
   return (
-    <button className="absolute accent-gradient right-0 border-gray-300 dark:border-gray-800  hover:bg-gray-800 rounded-r-lg w-10 border-l-2 z-10 h-full text-xl ">
+    <div className="absolute flex items-center justify-center accent-gradient right-0 border-gray-300 dark:border-gray-800  hover:bg-gray-800 rounded-r-lg w-10 border-l-2 z-10 h-full text-xl ">
       {icon}
-    </button>
+    </div>
   );
 };
 
