@@ -16,6 +16,7 @@ const App: React.FC = () => {
   const [isMetaMaskActive] = useState<boolean>(
     window.ethereum ? window.ethereum.isMetaMask : false
   );
+  const [contractAddress, setContractAddress] = useState("");
 
   return (
     <DarkModeProvider>
@@ -40,7 +41,11 @@ const App: React.FC = () => {
               </h3>
             </div>
 
-            <SearchBar queryItems={queryItems} setQueryItems={setQueryItems} />
+            <SearchBar
+              queryItems={queryItems}
+              setQueryItems={setQueryItems}
+              setContractAddress={setContractAddress}
+            />
             <CreateXathon />
           </div>
         ) : (
