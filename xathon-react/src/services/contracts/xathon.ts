@@ -17,7 +17,7 @@ class Xathon {
     this.addresses = [];
   }
 
-  async getAccounts(): Promise<void> {
+  async getAddresses(): Promise<void> {
     this.addresses = await web3.eth.requestAccounts();
   }
   async getName(): Promise<string> {
@@ -26,6 +26,10 @@ class Xathon {
 
   async getUnit(): Promise<string> {
     return await this.xathonContract.methods.xathonUnit().call();
+  }
+
+  async getDonationPerUnit(): Promise<string> {
+    return await this.xathonContract.methods.donationPerUnit().call();
   }
 
   async getMinimumDeposit(): Promise<string> {
@@ -62,3 +66,5 @@ class Xathon {
     });
   }
 }
+
+export default Xathon;
