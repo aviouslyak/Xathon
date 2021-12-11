@@ -58,6 +58,12 @@ const SearchBar: React.FC<Props> = ({
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const match = /^0x[a-fA-F0-9]{40}$/;
+    if (match.test(query)) {
+      setContractAddress(query);
+      return;
+    }
+
     try {
       const address = await XathonFactory.getAddress(query);
       setContractAddress(address);
