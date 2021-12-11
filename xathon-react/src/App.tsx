@@ -6,9 +6,10 @@ import Navbar from "./components/Navbar/Navbar";
 import { FaWalking } from "react-icons/fa";
 import SearchBar from "./components/SearchBar/SearchBar";
 import { SiEthereum } from "react-icons/si";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CreateXathon from "./components/CreateXathon/CreateXathon";
 import NoMetaMask from "./components/NoMetaMask/NoMetaMask";
+import XathonDisplay from "./components/XathonDisplay/XathonDisplay";
 
 declare let window: any;
 const App: React.FC = () => {
@@ -17,6 +18,9 @@ const App: React.FC = () => {
     window.ethereum ? window.ethereum.isMetaMask : false
   );
   const [contractAddress, setContractAddress] = useState("");
+  useEffect(() => {
+    console.log(contractAddress);
+  }, [contractAddress]);
 
   return (
     <DarkModeProvider>
@@ -41,12 +45,18 @@ const App: React.FC = () => {
               </h3>
             </div>
 
-            <SearchBar
-              queryItems={queryItems}
-              setQueryItems={setQueryItems}
-              setContractAddress={setContractAddress}
-            />
-            {contractAddress ? null : <CreateXathon />}
+            {contractAddress ? (
+              <XathonDisplay address={contractAddress} />
+            ) : (
+              <>
+                <SearchBar
+                  queryItems={queryItems}
+                  setQueryItems={setQueryItems}
+                  setContractAddress={setContractAddress}
+                />
+                <CreateXathon />
+              </>
+            )}
           </div>
         ) : (
           <NoMetaMask />
