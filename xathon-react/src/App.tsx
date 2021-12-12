@@ -54,7 +54,7 @@ const App: React.FC = () => {
                   setQueryItems={setQueryItems}
                   setContractAddress={setContractAddress}
                 />
-                <CreateXathon />
+                <CreateXathon setAddress={setContractAddress} />
               </>
             )}
           </div>

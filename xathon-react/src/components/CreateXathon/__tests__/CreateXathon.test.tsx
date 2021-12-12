@@ -13,9 +13,11 @@ describe("foo", () => {
   let descriptionInput: HTMLElement;
   let unitInput: HTMLElement;
   let minimumDepositInput: HTMLElement;
+  let mockSetAddress: jest.Mock;
 
   beforeEach(() => {
-    render(<CreateXathon />);
+    mockSetAddress = jest.fn().mockReturnValue(ADDRESS);
+    render(<CreateXathon setAddress={mockSetAddress} />);
     form = screen.getByTestId("form");
     addressInput = screen.getByLabelText("Donation recipient address");
     nameInput = screen.getByLabelText("Xathon name");
@@ -280,5 +282,19 @@ describe("foo", () => {
       "Some error has occurred. Check that you confirmed the transaction in MetaMask, and that the contract name is unique"
     );
     expect(errorText).not.toBeInTheDocument();
+  });
+
+  test("calls setAddress with address on success", async () => {
+    fireEvent.change(addressInput, { target: { value: ADDRESS } });
+    fireEvent.change(nameInput, { target: { value: "foo" } });
+    fireEvent.change(descriptionInput, { target: { value: "foo" } });
+    fireEvent.change(unitInput, { target: { value: "miles" } });
+    fireEvent.change(minimumDepositInput, { target: { value: 0 } });
+    fireEvent.click(submit);
+
+    await waitFor(() => {
+      expect(mockSetAddress).toHaveBeenCalled();
+      expect(mockSetAddress).toHaveBeenCalledWith(ADDRESS);
+    });
   });
 });

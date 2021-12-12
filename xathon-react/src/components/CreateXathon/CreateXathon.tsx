@@ -15,7 +15,10 @@ interface FormValues {
   minimumDeposit: number;
 }
 
-const CreateXathon: React.FC = () => {
+interface CreateXathonProps {
+  setAddress: React.Dispatch<React.SetStateAction<string>>;
+}
+const CreateXathon: React.FC<CreateXathonProps> = ({ setAddress }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
 
@@ -40,6 +43,8 @@ const CreateXathon: React.FC = () => {
         setIsSubmitting(true);
         try {
           await XathonFactory.deployXathon(data);
+          const address = await XathonFactory.getAddress(data.name);
+          setAddress(address);
         } catch (err) {
           setError(
             "Some error has occurred. Check that you confirmed the transaction in MetaMask, and that the contract name is unique"
