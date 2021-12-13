@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`foo matches snapshot 1`] = `
+<form
+  class="responsive-component-width p-4 flex flex-col justify-items-start items-start"
+  data-testid="form"
+  id="create-xathon"
+>
+  <h3
+    class="font-semibold text-xl self-center"
+  >
+    Create a new 
+    <span
+      class="accent-text"
+    >
+      Xathon
+    </span>
+     contract
+  </h3>
+  <p
+    class="text-red-500 text-md"
+  />
+  <label
+    class="font-semibold"
+    for="address"
+  >
+    Donation recipient address
+  </label>
+  <p
+    class="text-red-500 text-xs"
+  />
+  <div
+    class="w-2/3 h-10 relative"
+    data-testid="input-wrapper"
+  >
+    <input
+      class="rounded-lg dark:bg-gray-700 h-full w-full pl-2 pr-2 bg-gray-200 "
+      id="address"
+      name="address"
+      placeholder="Enter address"
+      type="text"
+    />
+  </div>
+  <label
+    class="font-semibold"
+    for="name"
+  >
+    Xathon name
+  </label>
+  <p
+    class="text-red-500 text-xs"
+  />
+  <div
+    class="w-2/3 h-10 relative"
+    data-testid="input-wrapper"
+  >
+    <input
+      class="rounded-lg dark:bg-gray-700 h-full w-full pl-2 pr-2 bg-gray-200 "
+      id="name"
+      name="name"
+      placeholder="Enter name"
+      type="text"
+    />
+  </div>
+  <label
+    class="font-semibold"
+    for="description"
+  >
+    Description
+  </label>
+  <p
+    class="text-red-500 text-xs"
+  />
+  <textarea
+    class="
+          resize-none dark:bg-gray-700 rounded-lg block px-2 bg-gray-200 block w-2/3"
+    id="description"
+    name="description"
+    placeholder="Enter description"
+  />
+  <label
+    class="font-semibold"
+    for="unit"
+  >
+    Unit for xathon
+  </label>
+  <p
+    class="text-red-500 text-xs"
+  />
+  <div
+    class="w-30 h-10 relative"
+    data-testid="input-wrapper"
+  >
+    <input
+      class="rounded-lg dark:bg-gray-700 h-full w-full pl-2 pr-2 bg-gray-200 "
+      id="unit"
+      name="unit"
+      placeholder="miles"
+      type="text"
+    />
+  </div>
+  <label
+    class="font-semibold"
+    for="minimumDeposit"
+  >
+    Minimum deposit
+  </label>
+  <p
+    class="text-red-500 text-xs"
+  />
+  <div
+    class="w-20 h-10 relative"
+    data-testid="input-wrapper"
+  >
+    <input
+      class="rounded-lg dark:bg-gray-700 h-full w-full pl-2 pr-2 bg-gray-200 "
+      id="minimumDeposit"
+      name="minimumDeposit"
+      placeholder="0"
+      type="text"
+    />
+  </div>
+  <button
+    class="self-center accent-gradient rounded-full w-1/5 p-2 cursor-pointer"
+    form="create-xathon"
+    type="submit"
+  >
+    Create
+  </button>
+  <p
+    class="text-sm self-center mt-1"
+  >
+    Your request could take a while to complete
+  </p>
+</form>
+`;

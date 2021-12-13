@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchBar /> matches snapshot 1`] = `
+<input
+  class="rounded-lg dark:bg-gray-700 h-full w-full pl-2 pr-10 bg-gray-200 "
+  id="search"
+  name="search"
+  type="search"
+  value=""
+/>
+`;
