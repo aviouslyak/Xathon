@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Input /> matches snapshot 1`] = `
+<input
+  class="rounded-lg bg-pink-200 focus:outline-none focus:border-2 border-pink-500 shadow-md shadow-pink-800  h-full w-full pl-2 pr-10  foo"
+  id="label"
+  name="label"
+  placeholder="Search"
+/>
+`;

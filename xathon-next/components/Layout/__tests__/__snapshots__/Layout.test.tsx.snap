@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Layout /> layout matches snapshot 1`] = `
+<div
+  class="w-screen h-screen bg-rose-400 text-slate-800"
+  data-testid="page-wrapper"
+>
+  <div
+    class="flex w-full justify-center"
+  >
+    <h1
+      class="text-6xl font-header border-2 border-rose-900 p-2 my-4 rounded-md shadow-md shadow-pink-900"
+    >
+      Xathon
+    </h1>
+  </div>
+  <p
+    data-testid="test-child"
+  >
+    Foo
+  </p>
+</div>
+`;

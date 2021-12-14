@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`<TitleHeader /> matches snapshot 1`] = `
-<h1
-  class="text-center mx-2 text-4xl font-light accent-text"
->
-  New Header
-</h1>
-`;
