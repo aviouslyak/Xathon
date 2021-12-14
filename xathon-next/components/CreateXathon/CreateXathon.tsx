@@ -7,6 +7,7 @@ import XathonFactory from "../../services/contracts/XathonFactory";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { CgSpinner } from "react-icons/cg";
 import ErrorText from "../ErrorText/ErrorText";
+import Router from "next/router";
 
 interface FormValues {
   address: string;
@@ -39,18 +40,18 @@ const CreateXathon: React.FC = () => {
       className="w-1/2 p-4 flex flex-col justify-items-start items-start gap-1"
       onSubmit={handleSubmit(async (data) => {
         setIsSubmitting(true);
-        /*
+        const XathonFactoryWriter = new XathonFactory();
+        await XathonFactoryWriter.setAddresses();
         try {
-          await XathonFactory.deployXathon(data);
-          const address = await XathonFactory.getAddress(data.name);
-          setAddress(address);
+          await XathonFactoryWriter.deployXathon(data);
+          const address = await XathonFactory.getContractAddress(data.name);
+          Router.push(`/${address}`);
         } catch (err) {
           setError(
             "Some error has occurred. Check that you confirmed the transaction in MetaMask, and that the contract name is unique"
           );
         }
         setIsSubmitting(false);
-        */
       })}
       data-testid="form"
       id="create-xathon"
