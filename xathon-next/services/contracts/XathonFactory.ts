@@ -14,6 +14,7 @@ interface XathonValues {
   minimumDeposit: number;
 }
 
+declare let window: any;
 export default class XathonFactory {
   private static ReadOnlyXF: XathonFactoryType = new web3ReadOnly.eth.Contract(
     contractJSON.abi,
@@ -22,10 +23,11 @@ export default class XathonFactory {
 
   private WriteOnlyXF: XathonFactoryType;
   private addresses: string[];
+  private web3;
 
   constructor() {
-    const web3 = getWeb3Writer();
-    this.WriteOnlyXF = new web3.eth.Contract(
+    this.web3 = getWeb3Writer();
+    this.WriteOnlyXF = new this.web3.eth.Contract(
       contractJSON.abi,
       ADDRESSES.rinkeby
     ) as any as XathonFactoryType;
@@ -40,7 +42,7 @@ export default class XathonFactory {
   }
 
   async setAddresses() {
-    this.addresses = await web3ReadOnly.eth.requestAccounts();
+    this.addresses = await this.web3.eth.requestAccounts();
   }
   async deployXathon(values: XathonValues) {
     return await this.WriteOnlyXF.methods
