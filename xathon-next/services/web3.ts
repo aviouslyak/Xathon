@@ -5,3 +5,6 @@ export const web3ReadOnly = new Web3(
     "wss://rinkeby.infura.io/ws/v3/5d605eeddb374e6c889f7c36f0dd687d"
   )
 );
+
+declare let window: any;
+export const getWeb3Writer = () => new Web3(window.ethereum);
