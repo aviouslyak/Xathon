@@ -5,6 +5,7 @@ import SubmitButton from "../SubmitButton/SubmitButton";
 import Textarea from "../TextArea/Textarea";
 import XathonFactory from "../../services/contracts/XathonFactory";
 import { AiOutlinePlusCircle } from "react-icons/ai";
+import { CgSpinner } from "react-icons/cg";
 import ErrorText from "../ErrorText/ErrorText";
 
 interface FormValues {
@@ -35,7 +36,7 @@ const CreateXathon: React.FC = () => {
 
   return (
     <form
-      className="w-1/2 p-4 flex flex-col justify-items-start items-start"
+      className="w-1/2 p-4 flex flex-col justify-items-start items-start gap-1"
       onSubmit={handleSubmit(async (data) => {
         setIsSubmitting(true);
         /*
@@ -88,7 +89,7 @@ const CreateXathon: React.FC = () => {
       />
       <Textarea
         placeholder="Enter description"
-        className="block w-2/3"
+        className="block w-2/3 h-20"
         {...register("description")}
       />
       <Input
