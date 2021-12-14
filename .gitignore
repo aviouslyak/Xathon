@@ -14,4 +14,4 @@ pids
 logs
 *.log
 npm-debug.log*
-.next
+.next/
