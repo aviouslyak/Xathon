@@ -31,7 +31,7 @@ const Home: NextPage<HomeProps> = ({ names }) => {
           </li>
         </ul>
       </div>
-      <Link href="#">
+      <Link href="/create">
         <a className="group w-32 h-10 text-xl font-semibold flex items-center justify-center rounded-lg transition-shadow shadow-md hover:shadow-lg shadow-pink-900 hover:shadow-pink-900 bg-orange-400">
           Create{" "}
           <GrFormNextLink className="transition-transform transform group-hover:translate-x-3 ml-2 inline-block" />
