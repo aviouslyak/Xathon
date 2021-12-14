@@ -2,7 +2,7 @@
 
 exports[`foo matches snapshot 1`] = `
 <form
-  class="responsive-component-width p-4 flex flex-col justify-items-start items-start"
+  class="w-1/2 p-4 flex flex-col justify-items-start items-start gap-1"
   data-testid="form"
   id="create-xathon"
 >
@@ -18,7 +18,7 @@ exports[`foo matches snapshot 1`] = `
      contract
   </h3>
   <p
-    class="text-red-500 text-md"
+    class="text-black text-md"
   />
   <label
     class="font-semibold"
@@ -27,14 +27,14 @@ exports[`foo matches snapshot 1`] = `
     Donation recipient address
   </label>
   <p
-    class="text-red-500 text-xs"
+    class="text-black text-md"
   />
   <div
     class="w-2/3 h-10 relative"
     data-testid="input-wrapper"
   >
     <input
-      class="rounded-lg dark:bg-gray-700 h-full w-full pl-2 pr-2 bg-gray-200 "
+      class="rounded-lg bg-pink-200 focus:outline-none focus:border-2 border-pink-500 shadow-md shadow-pink-800  h-full w-full pl-2 pr-2  "
       id="address"
       name="address"
       placeholder="Enter address"
@@ -48,14 +48,14 @@ exports[`foo matches snapshot 1`] = `
     Xathon name
   </label>
   <p
-    class="text-red-500 text-xs"
+    class="text-black text-md"
   />
   <div
     class="w-2/3 h-10 relative"
     data-testid="input-wrapper"
   >
     <input
-      class="rounded-lg dark:bg-gray-700 h-full w-full pl-2 pr-2 bg-gray-200 "
+      class="rounded-lg bg-pink-200 focus:outline-none focus:border-2 border-pink-500 shadow-md shadow-pink-800  h-full w-full pl-2 pr-2  "
       id="name"
       name="name"
       placeholder="Enter name"
@@ -69,11 +69,11 @@ exports[`foo matches snapshot 1`] = `
     Description
   </label>
   <p
-    class="text-red-500 text-xs"
+    class="text-black text-xs"
   />
   <textarea
     class="
-          resize-none dark:bg-gray-700 rounded-lg block px-2 bg-gray-200 block w-2/3"
+          resize-none rounded-lg block px-2 bg-pink-200 focus:outline-none focus:border-2 border-pink-500 shadow-md shadow-pink-800 block w-2/3 h-20"
     id="description"
     name="description"
     placeholder="Enter description"
@@ -85,14 +85,14 @@ exports[`foo matches snapshot 1`] = `
     Unit for xathon
   </label>
   <p
-    class="text-red-500 text-xs"
+    class="text-black text-md"
   />
   <div
     class="w-30 h-10 relative"
     data-testid="input-wrapper"
   >
     <input
-      class="rounded-lg dark:bg-gray-700 h-full w-full pl-2 pr-2 bg-gray-200 "
+      class="rounded-lg bg-pink-200 focus:outline-none focus:border-2 border-pink-500 shadow-md shadow-pink-800  h-full w-full pl-2 pr-2  "
       id="unit"
       name="unit"
       placeholder="miles"
@@ -106,14 +106,14 @@ exports[`foo matches snapshot 1`] = `
     Minimum deposit
   </label>
   <p
-    class="text-red-500 text-xs"
+    class="text-black text-md"
   />
   <div
     class="w-20 h-10 relative"
     data-testid="input-wrapper"
   >
     <input
-      class="rounded-lg dark:bg-gray-700 h-full w-full pl-2 pr-2 bg-gray-200 "
+      class="rounded-lg bg-pink-200 focus:outline-none focus:border-2 border-pink-500 shadow-md shadow-pink-800  h-full w-full pl-2 pr-2  "
       id="minimumDeposit"
       name="minimumDeposit"
       placeholder="0"
@@ -121,11 +121,30 @@ exports[`foo matches snapshot 1`] = `
     />
   </div>
   <button
-    class="self-center accent-gradient rounded-full w-1/5 p-2 cursor-pointer"
+    class="self-center group w-40 h-10 text-xl font-semibold flex items-center justify-center rounded-lg transition-shadow shadow-md hover:shadow-lg shadow-pink-900 hover:shadow-pink-900 bg-orange-400"
     form="create-xathon"
     type="submit"
   >
-    Create
+    <span>
+      Create
+      <svg
+        class="transition-transform transform group-hover:scale-125 ml-2 inline-block"
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 1024 1024"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M696 480H544V328c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v152H328c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h152v152c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V544h152c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8z"
+        />
+        <path
+          d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+        />
+      </svg>
+    </span>
   </button>
   <p
     class="text-sm self-center mt-1"

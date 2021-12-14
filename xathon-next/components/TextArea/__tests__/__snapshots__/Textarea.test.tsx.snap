@@ -3,7 +3,7 @@
 exports[`<Textarea /> matches snapshot 1`] = `
 <textarea
   class="
-          resize-none dark:bg-gray-700 rounded-lg block px-2 bg-gray-200 w-screen"
+          resize-none rounded-lg block px-2 bg-pink-200 focus:outline-none focus:border-2 border-pink-500 shadow-md shadow-pink-800 w-screen"
   id="Textarea"
   name="Textarea"
   placeholder="search"
