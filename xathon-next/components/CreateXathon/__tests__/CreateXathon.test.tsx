@@ -1,6 +1,6 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import CreateXathon from "../CreateXathon";
-import XathonFactory from "../../../services/contracts/xathonFactory";
+import XathonFactory from "../../../services/contracts/XathonFactory";
 import { TransactionReceipt } from "web3-core";
 import Router from "next/router";
 
