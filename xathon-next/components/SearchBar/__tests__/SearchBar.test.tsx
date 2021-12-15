@@ -6,7 +6,7 @@ import {
   act,
 } from "@testing-library/react";
 import React from "react";
-import XathonFactory from "../../../services/contracts/XathonFactory";
+import { XathonFactoryReader } from "../../../services/contracts/XathonFactory";
 import SearchBar from "../SearchBar";
 import Router from "next/router";
 
@@ -20,14 +20,14 @@ jest.mock("../../../services/contracts/XathonFactory");
 
 describe("<SearchBar />", () => {
   let component: HTMLElement;
-  let mockGetAddress: jest.SpyInstance;
   let mockPush: jest.SpyInstance;
+  let mockGetContractAddress: jest.SpyInstance;
 
   beforeEach(async () => {
     render(<MockSearchBar />);
     component = screen.getByRole("searchbox");
-    mockGetAddress = jest
-      .spyOn(XathonFactory, "getContractAddress")
+    mockGetContractAddress = jest
+      .spyOn(XathonFactoryReader.prototype, "getContractAddress")
       .mockImplementation(() => new Promise((resolve) => resolve(ADDRESS)));
     mockPush = jest.spyOn(Router, "push");
   });
@@ -92,7 +92,7 @@ describe("<SearchBar />", () => {
   });
 
   test("sets errorText on failure", async () => {
-    jest.spyOn(XathonFactory, "getContractAddress").mockRejectedValueOnce("");
+    mockGetContractAddress.mockRejectedValueOnce("");
     fireEvent.change(component, { target: { value: "f" } });
     const submitButton = screen.getByTestId("submit-button");
     fireEvent.click(submitButton);

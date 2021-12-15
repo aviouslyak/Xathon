@@ -3,7 +3,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import Input from "../Input/Input";
 import Dropdown from "../Dropdown/Dropdown";
 import Router from "next/router";
-import XathonFactory from "../../services/contracts/XathonFactory";
+import { XathonFactoryReader } from "../../services/contracts/XathonFactory";
 
 interface Props {
   queryItems: string[];
@@ -54,6 +54,7 @@ const SearchBar: React.FC<Props> = ({ queryItems }) => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const xathonFactoryReader = new XathonFactoryReader();
     const match = /^0x[a-fA-F0-9]{40}$/;
     if (match.test(query)) {
       Router.push(`/${query}`);
@@ -61,7 +62,7 @@ const SearchBar: React.FC<Props> = ({ queryItems }) => {
     }
 
     try {
-      const address = await XathonFactory.getContractAddress(query);
+      const address = await xathonFactoryReader.getContractAddress(query);
       address && Router.push(`/${address}`);
     } catch (err: any) {
       setError("Contract not found");

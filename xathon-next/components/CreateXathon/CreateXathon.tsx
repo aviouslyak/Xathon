@@ -3,7 +3,10 @@ import { useForm } from "react-hook-form";
 import Input from "../Input/Input";
 import SubmitButton from "../SubmitButton/SubmitButton";
 import Textarea from "../TextArea/Textarea";
-import XathonFactory from "../../services/contracts/XathonFactory";
+import {
+  XathonFactoryReader,
+  XathonFactoryWriter,
+} from "../../services/contracts/XathonFactory";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { CgSpinner } from "react-icons/cg";
 import ErrorText from "../ErrorText/ErrorText";
@@ -40,11 +43,14 @@ const CreateXathon: React.FC = () => {
       className="w-1/2 p-4 flex flex-col justify-items-start items-start gap-1"
       onSubmit={handleSubmit(async (data) => {
         setIsSubmitting(true);
-        const XathonFactoryWriter = new XathonFactory();
-        await XathonFactoryWriter.setAddresses();
+        const xathonFactoryWriter = new XathonFactoryWriter();
+        const xathonFactoryReader = new XathonFactoryReader();
+        await xathonFactoryWriter.setAddresses();
         try {
-          await XathonFactoryWriter.deployXathon(data);
-          const address = await XathonFactory.getContractAddress(data.name);
+          await xathonFactoryWriter.deployXathon(data);
+          const address = await xathonFactoryReader.getContractAddress(
+            data.name
+          );
           Router.push(`/${address}`);
         } catch (err) {
           setError(

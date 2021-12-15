@@ -2,7 +2,7 @@ import type { GetServerSideProps, NextPage } from "next";
 import SearchBar from "../components/SearchBar/SearchBar";
 import { GrFormNextLink } from "react-icons/gr";
 import Link from "next/link";
-import XathonFactory from "../services/contracts/XathonFactory";
+import { XathonFactoryReader } from "../services/contracts/XathonFactory";
 
 interface HomeProps {
   names: string[];
@@ -42,7 +42,8 @@ const Home: NextPage<HomeProps> = ({ names }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const names = await XathonFactory.getContractNames();
+  const xathonFactoryReader = new XathonFactoryReader();
+  const names = await xathonFactoryReader.getContractNames();
   return {
     props: {
       names,

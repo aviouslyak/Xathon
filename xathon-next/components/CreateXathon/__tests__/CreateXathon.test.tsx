@@ -1,6 +1,6 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import CreateXathon from "../CreateXathon";
-import XathonFactory from "../../../services/contracts/XathonFactory";
+import { XathonFactoryWriter } from "../../../services/contracts/XathonFactory";
 import { TransactionReceipt } from "web3-core";
 import Router from "next/router";
 
@@ -53,7 +53,10 @@ describe("foo", () => {
     minimumDepositInput = screen.getByLabelText("Minimum deposit");
     submit = screen.getByRole("button");
 
-    spiedDeployXathon = jest.spyOn(XathonFactory.prototype, "deployXathon");
+    spiedDeployXathon = jest.spyOn(
+      XathonFactoryWriter.prototype,
+      "deployXathon"
+    );
     spiedRouterPush = jest.spyOn(Router, "push");
   });
 
@@ -122,7 +125,9 @@ describe("foo", () => {
     fillAndSubmit({ description: null });
 
     await waitFor(() => {
-      expect(XathonFactory.prototype.deployXathon).toHaveBeenCalledTimes(1);
+      expect(XathonFactoryWriter.prototype.deployXathon).toHaveBeenCalledTimes(
+        1
+      );
     });
   });
 
@@ -134,7 +139,9 @@ describe("foo", () => {
         "*Must be less than 20 characters in length"
       );
       expect(errorMessage).not.toBeInTheDocument();
-      expect(XathonFactory.prototype.deployXathon).toHaveBeenCalledTimes(1);
+      expect(XathonFactoryWriter.prototype.deployXathon).toHaveBeenCalledTimes(
+        1
+      );
     });
   });
 
@@ -145,7 +152,9 @@ describe("foo", () => {
         "*Must be less than 20 characters in length"
       );
       expect(errorMessage).not.toBeInTheDocument();
-      expect(XathonFactory.prototype.deployXathon).toHaveBeenCalledTimes(1);
+      expect(XathonFactoryWriter.prototype.deployXathon).toHaveBeenCalledTimes(
+        1
+      );
     });
   });
 
@@ -164,7 +173,9 @@ describe("foo", () => {
     fillAndSubmit({ minimumDeposit: null });
 
     await waitFor(() => {
-      expect(XathonFactory.prototype.deployXathon).toHaveBeenCalledTimes(1);
+      expect(XathonFactoryWriter.prototype.deployXathon).toHaveBeenCalledTimes(
+        1
+      );
     });
   });
 
@@ -176,8 +187,10 @@ describe("foo", () => {
       minimumDeposit: 0,
     });
     await waitFor(() => {
-      expect(XathonFactory.prototype.deployXathon).toHaveBeenCalledTimes(1);
-      expect(XathonFactory.prototype.deployXathon).toHaveBeenCalledWith({
+      expect(XathonFactoryWriter.prototype.deployXathon).toHaveBeenCalledTimes(
+        1
+      );
+      expect(XathonFactoryWriter.prototype.deployXathon).toHaveBeenCalledWith({
         address: ADDRESS,
         name: "N",
         description: "D",
