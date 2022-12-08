@@ -66,6 +66,8 @@ typechain --target web3-v1 --out-dir types/web3-v1-contracts 'ethereum/contracts
 typechain --target web3-v1 --out-dir types/web3-v1-contracts 'ethereum/contracts/XathonFactory.json'
 ```
 
+**Updated the infura url in services/web3.ts**
+
 **Run private server**
 
 ```
