@@ -3,7 +3,7 @@ import { XathonFactory as XathonFactoryType } from "../../types/web3-v1-contract
 const contractJSON = require("../../ethereum/contracts/XathonFactory.json");
 
 const ADDRESSES = {
-  rinkeby: "0x7d6a89f57cF666e613baA13a1cce354237b070b0",
+  goerli: "0x2ED125efab457C48afFd1360759131CEbe99B7bC",
 };
 
 interface XathonValues {
