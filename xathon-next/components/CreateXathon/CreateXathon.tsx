@@ -53,6 +53,7 @@ const CreateXathon: React.FC = () => {
           );
           Router.push(`/${address}`);
         } catch (err) {
+          console.error(err);
           setError(
             "Some error has occurred. Check that you confirmed the transaction in MetaMask, and that the contract name is unique"
           );
