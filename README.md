@@ -1,9 +1,10 @@
 # Xathon
-A web3 app to make running walkathons simple and decentralized. 
 
-xathon-react is a react based application written in Typescript using tailwindcss to create a functional frontend. 
+A web3 app to make running walkathons simple and decentralized.
 
-xathon-ethereum is a ethereum application created with truffle with contracts in Solidity and tests and in Typescript. 
+xathon-react is a react based application written in Typescript using tailwindcss to create a functional frontend.
+
+xathon-ethereum is a ethereum application created with truffle with contracts in Solidity and tests and in Typescript.
 
 ## Project Goals
 
@@ -14,70 +15,81 @@ xathon-ethereum is a ethereum application created with truffle with contracts in
 5. Write readable code using clear formatting and variable names
 6. End to end deployment on mainnet and on the web
 
-
 ## Running the applications
 
 ### xathon-ethereum
+
 **Installation**
+
 ```
 cd xathon-ethereum
-npm install 
+npm install
 ```
 
 **Compilation**
+
 ```
 npm run compile
 ```
 
 **Testing**
+
 ```
 npm test
 ```
 
 **Deployment**
+
 ```
-truffle migrate --network rinkeby # deploy to rinkeby 
+truffle migrate --network goerli # deploy to rinkeby
 ```
 
+### xathon-next
 
-### xathon-next 
 **Installation**
+
 ```
-cd xathon-next 
+cd xathon-next
 npm install
 ```
 
-**Tests** 
+**Tests**
+
 ```
 #not implemented
 ```
 
 **Run private server**
+
 ```
 npm run dev
 ```
 
-## Xathon React // DEPRECATED USE XATHON NEXT 
+## Xathon React // DEPRECATED USE XATHON NEXT
+
 **Installation**
+
 ```
 cd xathon-react
 npm install
 ```
 
 **Testing**
+
 ```
 npm test
 ```
 
 **Run private server**
+
 ```
 npm start
 ```
 
-
 ## TODO:
-- [x]  Finish Ethereum Contract 
-- [x] Finish Search 
-- [ ] Finish "Create Xathon Page" 
-- [ ] Finish Page to Interact with Existing Xathons 
-- [ ] Deploy to Mainnet / Polygon 
+
+- [x] Finish Ethereum Contract
+- [x] Finish Search
+- [ ] Finish "Create Xathon Page"
+- [ ] Finish Page to Interact with Existing Xathons
+- [ ] Deploy to Mainnet / Polygon

@@ -1,6 +1,7 @@
 const HDWalletProvider = require("truffle-hdwallet-provider");
-const mnemonic =
-  "bench cheese over science tuna style distance vote verb caught strong refuse";
+
+require("dotenv").config();
+
 module.exports = {
   networks: {
     development: {
@@ -8,14 +9,15 @@ module.exports = {
       port: 8545, // Standard Ethereum port (default: none)
       network_id: "*", // Any network (default: none)
     },
-    rinkeby: {
+    goerli: {
       provider: function () {
         return new HDWalletProvider(
-          mnemonic,
-          "https://rinkeby.infura.io/v3/73b6a38ccef64657b17d730de0fe7db6"
+          process.env.WALLET_MNEMONIC,
+          process.env.INFURA_GOERLI_URL
         );
       },
-      network_id: 4,
+
+      network_id: 5,
       gas: 4500000,
       gasPrice: 10000000000,
     },
