@@ -20,7 +20,7 @@ export class XathonFactoryReader {
   constructor() {
     this.ReadOnlyXF = new web3ReadOnly.eth.Contract(
       contractJSON.abi,
-      ADDRESSES.rinkeby
+      ADDRESSES.goerli
     ) as any as XathonFactoryType;
   }
 
