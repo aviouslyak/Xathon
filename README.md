@@ -59,6 +59,8 @@ npm install
 #not implemented
 ```
 
+**Updated the infura url in services/web3.ts**
+
 **Run private server**
 
 ```
