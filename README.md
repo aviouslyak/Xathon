@@ -39,7 +39,25 @@ npm test
 truffle migrate --network rinkeby # deploy to rinkeby 
 ```
 
-### xathon-react
+
+### xathon-next 
+**Installation**
+```
+cd xathon-next 
+npm install
+```
+
+**Tests** 
+```
+#not implemented
+```
+
+**Run private server**
+```
+npm run dev
+```
+
+## Xathon React // DEPRECATED USE XATHON NEXT 
 **Installation**
 ```
 cd xathon-react
