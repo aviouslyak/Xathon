@@ -2,6 +2,7 @@
 .vscode/
 node_modules/
 types/
+.env.local
 
 build/Release
 lib-cov
@@ -15,3 +16,4 @@ logs
 *.log
 npm-debug.log*
 .next/
+*
