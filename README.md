@@ -56,3 +56,10 @@ npm test
 npm start
 ```
 
+
+## TODO:
+- Finish Ethereum Component [x] 
+- Finish Search [x] 
+- Finish "Create Xathon Page" [] 
+- Finish Page to Interact with Existing Xathons [] 
+- Deploy to Mainnet / Polygon [] 
