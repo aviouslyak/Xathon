@@ -58,8 +58,8 @@ npm start
 
 
 ## TODO:
-- Finish Ethereum Component [x] 
-- Finish Search [x] 
-- Finish "Create Xathon Page" [] 
-- Finish Page to Interact with Existing Xathons [] 
-- Deploy to Mainnet / Polygon [] 
+- [x]  Finish Ethereum Contract 
+- [x] Finish Search 
+- [ ] Finish "Create Xathon Page" 
+- [ ] Finish Page to Interact with Existing Xathons 
+- [ ] Deploy to Mainnet / Polygon 
