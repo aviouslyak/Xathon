@@ -59,6 +59,13 @@ npm install
 #not implemented
 ```
 
+**Generate Typings**
+
+```
+typechain --target web3-v1 --out-dir types/web3-v1-contracts 'ethereum/contracts/Xathon.json'
+typechain --target web3-v1 --out-dir types/web3-v1-contracts 'ethereum/contracts/XathonFactory.json'
+```
+
 **Run private server**
 
 ```
