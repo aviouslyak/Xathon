@@ -42,7 +42,7 @@ export class XathonFactoryWriter {
     this.web3 = getWeb3Writer();
     this.WriteOnlyXF = new this.web3.eth.Contract(
       contractJSON.abi,
-      ADDRESSES.rinkeby
+      ADDRESSES.goerli
     ) as any as XathonFactoryType;
     this.addresses = [];
   }
