@@ -1,10 +1,10 @@
 # Xathon
 
-A web3 app to make running walkathons simple and decentralized.
+A web3 app to make running walkathons simple and decentralized. Currently WIP, but not in active development. 
 
 xathon-react is a react based application written in Typescript using tailwindcss to create a functional frontend.
 
-xathon-ethereum is a ethereum application created with truffle with contracts in Solidity and tests and in Typescript.
+xathon-ethereum is a ethereum application created with truffle and contracts built in Solidity and tests and in Typescript.
 
 ## Project Goals
 
